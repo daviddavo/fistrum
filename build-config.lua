@@ -1,6 +1,6 @@
 #!/usr/bin/env texlua
 
-module = "lipsum"
+module = "fistrum"
 
 testfiledir   = "testfiles-" .. ...
 

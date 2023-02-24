@@ -1,14 +1,17 @@
-# lipsum
+# fistrum
 
-150 paragraphs of Lorem ipsum dummy text for LaTeX.
+> Lorem fistrum quietooor fistro qué dise usteer quietooor va usté muy cargadoo.
+
+150 paragraphs of Lorem fistrum dummy text for LaTeX.
+
+Based on [www.chiquitoipsum.com](https://www.chiquitoipsum.com/)
 
 ## Install
 
-In most cases it is not requried to install this package manually, it is
-included in the major tex-distributions. If, for some reason, you want install
-it manually, run lipsum.ins through (pdf)latex to generate the style file. To
-generate the documentation, run lispum.dtx through a latex program that
-understands utf8 input (XeLaTeX or lualatex).
+If you want to install it manually, run fistrum.ins through latex to generate the
+style file. To generate the docs, run fistrum.dtx through XeLaTeX or lualatex.
+
+We are working on including this package in tex-distributions
 
 ## Usage
 
@@ -18,9 +21,14 @@ See the documentation.
 
 ```latex
 \documentclass{article}
-\usepackage{lipsum}
+\usepackage{fistrum}
 
 \begin{document}
-\lipsum
+\fistrum
 \end {document}
 ```
+
+## Things to do before publishing
+- [ ] Autogenerate fistrum-es.txt and fistrum-la.txt
+- [ ] Revise documentation
+- [ ] Fix tests

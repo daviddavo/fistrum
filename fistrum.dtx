@@ -15,12 +15,12 @@
 % Please send error reports and suggestions for improvements to
 %    https://github.com/PhelypeOleinik/lipsum
 %
-\def\lipsumversion{2.7}
-\def\lipsumdate{2021-09-20}
+\def\fistrumversion{0.1}
+\def\fistrumdate{2023-02-23}
 %<*driver>
-\ProvidesFile{lipsum.dtx}%
-  [\lipsumdate\space v\lipsumversion\space
-   Access to 150 of Lorem Ipsum dummy text]
+\ProvidesFile{fistrum.dtx}%
+  [\fistrumdate\space v\fistrumversion\space
+   Access to 150 of Lorem Fistrum dummy text]
 \documentclass{l3doc}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -43,7 +43,7 @@
 }
 \newmdenv[style=expl]{explbox}
 
-\usepackage{lipsum,multicol}
+\usepackage{fistrum,multicol}
 \usepackage{multirow}
 \usepackage[latin, english]{babel}
 \makeatletter
@@ -86,9 +86,9 @@
 \usepackage{hyperref}
 \def\ghissue#1{%
   \texttt{\##1}\footnote{%
-    \url{https://github.com/PhelypeOleinik/lipsum/issues/#1}}}
+    \url{https://github.com/daviddavo/fistrum/issues/#1}}}
 \begin{document}
-  \DocInput{lipsum.dtx}
+  \DocInput{fistrum.dtx}
 \end{document}
 %</driver>
 %<*package>
@@ -96,14 +96,14 @@
 \RequirePackage{l3keys2e}
 \@ifundefined{NewDocumentCommand}
   {\RequirePackage{xparse}}{}
-\ProvidesExplPackage {lipsum} {\lipsumdate} {\lipsumversion}
-  {150 paragraphs of Lorem Ipsum dummy text}
+\ProvidesExplPackage {fistrum} {\fistrumdate} {\fistrumversion}
+  {150 paragraphs of Lorem Fistrum dummy text}
 %</package>
 % \fi
 %
-% \title{\pkg{lipsum}}
+% \title{\pkg{fistrum}}
 % \subtitle{Access to 150 paragraphs of Lorem Ipsum dummy
-% text\thanks{Version: \lipsumversion}^^A
+% text\thanks{Version: \fistrumversion}^^A
 % \thanks{Since March 2021, Phelype Oleinik maintains this package
 %   (\href{mailto:phelype.oleinik@latex-project.org}
 %        {phelype.oleinik\meta{at}latex-project.org}).}}
@@ -158,17 +158,17 @@
 %     \usepackage{lipsum}
 % \end{verbatim}
 % in the preamble of your document. Probably the most important macro
-% provided by this package is \DescribeMacro{\lipsum}\cs{lipsum}, which
+% provided by this package is \DescribeMacro{\fistrum}\cs{lipsum}, which
 % typesets the \emph{Lorem ipsum} paragraphs. The first optional
 % argument allows to specify the range of the paragraphs. For example,
-% \verb|\lipsum[4-57]| typesets the paragraphs 4 to 57 and accordingly,
-% \verb|\lipsum[23]| typesets the 23\textsuperscript{rd} paragraph.
+% \verb|\fistrum[4-57]| typesets the paragraphs 4 to 57 and accordingly,
+% \verb|\fistrum[23]| typesets the 23\textsuperscript{rd} paragraph.
 % Using \cs{lipsum} without its optional argument typesets the
 % paragraphs 1--7 of \lips
 %
 % As of version 2.0, \cs{lipsum} has a second optional argument which allows
 % selecting a range of sentences from the paragraphs. To get the sentences
-% four to eight from paragraphs three to nine, use |\lipsum[3-9][4-8]|.
+% four to eight from paragraphs three to nine, use |\fistrum[3-9][4-8]|.
 % The sentences are counted from the first sentence of the first selected
 % paragraph.  In the previous example, sentence number~1 is the first
 % sentence of paragraph number~3.
@@ -224,16 +224,16 @@
 % \documentclass{article}
 % \usepackage{lipsum,xcolor}
 % \newcommand\foo{}
-% \SetLipsumParListItemEnd{\LipsumProtect{\foo}}
+% \SetFistrumParListItemEnd{\fistrumProtect{\foo}}
 %
 % \begin{document}
 % \renewcommand\foo{\color{.!75!red}}
-%   { \lipsumexp }
+%   { \fistrumexp }
 %
 % \newcounter{mycnt}\setcounter{mycnt}{1}
 % \renewcommand\foo{%
 %   (\themycnt)\stepcounter{mycnt}}
-% \lipsumexp
+% \fistrumexp
 % \end{document}
 % \end{verbatim}
 % \end{explbox}
@@ -346,7 +346,7 @@
 %
 % \subsection{User Commands}
 %
-% \begin{function}{\lipsum}
+% \begin{function}{\fistrum}
 %   \begin{syntax}
 %     \cs{lipsum}\meta{*}\oarg{par range}\oarg{sentence range}
 %   \end{syntax}
@@ -370,7 +370,7 @@
 %   the pieces of text.
 % \end{function}
 %
-% \begin{function}{\unpacklipsum,\lipsumexp}
+% \begin{function}{\unpackfistrum,\fistrumexp}
 %   \begin{syntax}
 %     \cs{unpacklipsum}\meta{*}\oarg{par range}\oarg{sentence range}
 %     \ldots
@@ -384,7 +384,7 @@
 %   does.
 % \end{function}
 %
-% \begin{function}{\setlipsum}
+% \begin{function}{\setfistrum}
 %   \begin{syntax}
 %     \cs{setlipsum}\Arg{key-val list}
 %   \end{syntax}
@@ -398,7 +398,7 @@
 % These commands exist for necessity or backwards comatibility, and
 % should normally not be needed in user documents.
 %
-% \begin{function}{\SetLipsumText}
+% \begin{function}{\SetFistrumText}
 %   \begin{syntax}
 %     \cs{SetLipsumDefault}\Arg{name}
 %   \end{syntax}
@@ -407,7 +407,7 @@
 %   kept for backwards compatibility.
 % \end{function}
 %
-% \begin{function}{\SetLipsumDefault}
+% \begin{function}{\SetFistrumDefault}
 %   \begin{syntax}
 %     \cs{SetLipsumDefault}\Arg{range}
 %   \end{syntax}
@@ -429,9 +429,9 @@
 % A \meta{range} argument can either be blank, a single integer, or a
 % proper integer range.  If the \meta{range} argument is blank, the
 % commands behave as if the argument was not given at all.  For example,
-% |\lipsum[]| behaves exaclty like |\lipsum| and outputs the default
-% paragraph range.  Note that |\lipsum[][2-5]| does \textbf{not} behave
-% as |\lipsum[2-5]|, but behaves as |\lipsum[1-7][2-5]| (assuming
+% |\fistrum[]| behaves exaclty like |\fistrum| and outputs the default
+% paragraph range.  Note that |\fistrum[][2-5]| does \textbf{not} behave
+% as |\fistrum[2-5]|, but behaves as |\fistrum[1-7][2-5]| (assuming
 % |default=range=1-7|), because the default value is then taken for the
 % first argument.  If the \meta{range} argument is an integer, then only
 % a single paragraph/sentence is selected.
@@ -440,16 +440,16 @@
 % as a \emph{proper} range \meta{n_i}|-|\meta{n_f}.  In a proper range,
 % if \meta{n_i} is blank, it is taken to be the start of the possible
 % range, and in the same way, if \meta{n_f} is empty it is taken to be
-% the end of the possible range.  That is, |\lipsum[-9]| is the same as
-% |\lipsum[1-9]|, and |\lipsum[5-]| is the same (assuming the standard
-% 150-paragraph dummy text) as |\lipsum[5-150]|, and similarly,
-% |\lipsum[-]| is the same as |\lipsum[1-150]|.
+% the end of the possible range.  That is, |\fistrum[-9]| is the same as
+% |\fistrum[1-9]|, and |\fistrum[5-]| is the same (assuming the standard
+% 150-paragraph dummy text) as |\fistrum[5-150]|, and similarly,
+% |\fistrum[-]| is the same as |\fistrum[1-150]|.
 %
 % Only one |-| is allowed in a range, so if more than one |-| is given,
 % an error is raised and no paragraphs/sentences are output.  No
 % paragraphs or sentences will be output also in case one of the ranges
-% is reversed, so |\lipsum[2-1]| returns no paragraphs, as does
-% |\lipsum[][2-1]| output no sentences, for example.  Note that
+% is reversed, so |\fistrum[2-1]| returns no paragraphs, as does
+% |\fistrum[][2-1]| output no sentences, for example.  Note that
 % ``returning no paragraphs/sentences'' is not ``the output is empty'':
 % that is mostly true, except that the |-before| and |-after| separators
 % are still output \secref{sec:separators}.
@@ -468,11 +468,11 @@
 % line-breaking looks better \secref{sec:foreword2.4}.  This feature is
 % on by default, so if you need the old behaviour you have to explicitly
 % disable automatic language switching with
-% |\setlipsum{auto-lang=false}|.
+% |\setfistrum{auto-lang=false}|.
 %
 % The language is defined individually for each dummy text
 % \secref{sec:other-texts}, but you may change it for the current dummy
-% text by using |\setlipsum{language=|\meta{lang}|}|.  If you load
+% text by using |\setfistrum{language=|\meta{lang}|}|.  If you load
 % another dummy text (for example with the \opt{text} option), then the
 % option \opt{language} is also changed according to the dummy text
 % loaded \secref{sec:other-texts}.
@@ -559,11 +559,11 @@
 % \cs{lipsum}|*| is used, the \opt{par-before*} tokens are
 % inserted, and so on.  It is also true for sentences (starred or
 % otherwise), replacing |par| in the option names by |sentence|, so when
-% you use, for example, |\lipsum[][1-9]|, the \opt{sentence-before}
+% you use, for example, |\fistrum[][1-9]|, the \opt{sentence-before}
 % tokens will be unconditionally inserted, and so on.
 %
 % Note that, when \cs{lipsum} is used in sentence-mode (for example,
-% with |\lipsum[1-3][1-9]|), only the |sentence-...| tokens are inserted
+% with |\fistrum[1-3][1-9]|), only the |sentence-...| tokens are inserted
 % in the output, regardless of how many paragraphs those sentences were
 % collected from. In the same way, if paragraph-mode is being used, only
 % |par-...| tokens are inserted.
@@ -582,7 +582,7 @@
 %   \ttfamily \makeatletter
 %   \definecolor{a}{HTML}{E0211A}\colorlet{a}{a!60!black}
 %   \definecolor{b}{HTML}{5970D5}\colorlet{b}{b!60!black}
-%   \protected@edef\x#1#2{\string\SetLipsum
+%   \protected@edef\x#1#2{\string\SetFistrum
 %     {\color{a}#1}List{\color{b}#2}}%
 %   \def\y#1#2{{\color{a}#1}-{\color{b}#2}}
 %   \begin{tabular}{@{}ll@{}}
@@ -604,9 +604,9 @@
 % \end{center}
 %
 % Additionally, the command-based interface provided shortcuts
-% |\SetLipsum|\meta{Thing}|List|(|Item|)|Surrounders|, which are
+% |\SetFistrum|\meta{Thing}|List|(|Item|)|Surrounders|, which are
 % equivalent to just using the commands
-% |\SetLipsum|\meta{Thing}|List|(|Item|)|Start| then |\...End|.  These
+% |\SetFistrum|\meta{Thing}|List|(|Item|)|Start| then |\...End|.  These
 % don't provide any functionality, other than requiring a little less
 % typing, so no key-val alternative was implemented.
 % The |\...|\meta{Thing}|...Surrounders| commands should be replaced by
@@ -619,7 +619,7 @@
 %   \ttfamily \makeatletter
 %   \definecolor{a}{HTML}{E0211A}\colorlet{a}{a!60!black}
 %   \definecolor{b}{HTML}{5970D5}\colorlet{b}{b!60!black}
-%   \protected@edef\x#1#2{\string\SetLipsum
+%   \protected@edef\x#1#2{\string\SetFistrum
 %     {\color{a}#1}List{\color{b}#2}Surrounders%^^A
 %      \kern .5\tabcolsep \xleaders\hbox{\vrule
 %          width 2pt height \dimexpr .5ex+.4pt\relax depth -.5ex
@@ -657,7 +657,7 @@
 % different languages without re-coding the logic implemented by
 % \pkg{lipsum}.
 %
-% \begin{function}{\NewLipsumPar}
+% \begin{function}{\NewFistrumPar}
 %   \begin{syntax}
 %     \cs{NewLipsumPar}\Arg{paragraph}
 %   \end{syntax}
@@ -675,7 +675,7 @@
 % find a file with this ending in my |texmf|-tree, so I guess it is
 % safe.}
 %
-% \begin{function}{\SetLipsumLanguage}
+% \begin{function}{\SetFistrumLanguage}
 %   \begin{syntax}
 %     \cs{SetLipsumLanguage}\Arg{lang}
 %   \end{syntax}
@@ -765,10 +765,10 @@
 %    \end{macrocode}
 % \end{variable}
 %
-% \begin{variable}[int]{\g_lipsum_default_range_tl}
+% \begin{variable}[int]{\g_fistrum_default_range_tl}
 %   The default range for lipsum paragraphs.
 %    \begin{macrocode}
-\tl_new:N \g_lipsum_default_range_tl
+\tl_new:N \g_fistrum_default_range_tl
 %    \end{macrocode}
 % \end{variable}
 %
@@ -893,7 +893,7 @@
 \cs_new_protected:Npn \@@_parse_par_range:nNN #1 #2 #3
   {
     \tl_if_blank:nTF {#1}
-      { \exp_args:NV \@@_parse_range_arg:nNNn \g_lipsum_default_range_tl }
+      { \exp_args:NV \@@_parse_range_arg:nNNn \g_fistrum_default_range_tl }
       { \@@_parse_range_arg:nNNn {#1} }
           #2 #3 { \g_@@_par_int }
   }
@@ -919,7 +919,7 @@
             \int_set_eq:NN #6 #5
           }
           {
-            \msg_error:nnn { lipsum } { invalid-range } {#4}
+            \msg_error:nnn { fistrum } { invalid-range } {#4}
             \@@_parse_range_arg:nNNn { 2 - 1 } #5 #6 {#7}
           }
       }
@@ -942,7 +942,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}[int]{\lipsum_get_range:nn}
+% \begin{macro}[int]{\fistrum_get_range:nn}
 % \begin{macro}{
 %     \@@_build_list:nn,
 %     \@@_build_list_aux:n,
@@ -953,7 +953,7 @@
 %   \meta{number_2} with the proper delimiters added.  Text is returned
 %   in \cs{exp_not:n}, so this macro can be safely used in an \cs{edef}.
 %    \begin{macrocode}
-\cs_new:Npn \lipsum_get_range:nn #1 #2
+\cs_new:Npn \fistrum_get_range:nn #1 #2
   {
     \@@_sep_item:nn { par } { start }
     \use:e
@@ -979,10 +979,10 @@
       \if_meaning:w \q_@@_mark #1
         \@@_get_paragraph_end:w
       \else:
-        \lipsum_get_paragraph:n {#1}
+        \fistrum_get_paragraph:n {#1}
       \fi:
     \else:
-      \lipsum_get_paragraph:n {#1}
+      \fistrum_get_paragraph:n {#1}
       \@@_sep_item:nn { par } { itemseparator }
     \fi:
     \@@_get_paragraph:ww #2 ;
@@ -992,12 +992,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}[int]{\lipsum_get_paragraph:n}
+% \begin{macro}[int]{\fistrum_get_paragraph:n}
 %   Expands to the paragraph \meta{number} with the proper delimiters
 %   added.  Text is returned in \cs{exp_not:n}, so this macro can be
 %   safely used in an \cs{edef}.
 %    \begin{macrocode}
-\cs_new:Npn \lipsum_get_paragraph:n #1
+\cs_new:Npn \fistrum_get_paragraph:n #1
   {
     \@@_sep_item:nn { par } { itemstart }
     \@@_unexpanded_par:n {#1}
@@ -1020,13 +1020,13 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}[int]{\lipsum_get_sentences:nnn,\lipsum_get_sentences:nnV}
+% \begin{macro}[int]{\fistrum_get_sentences:nnn,\fistrum_get_sentences:nnV}
 % \begin{macro}{\@@_get_sentences:nnnw,\@@_get_sentences_end:w}
 %   Expands to the sentences numbered between \meta{number_1} and
 %   \meta{number_2}, inclusive, contained in the \meta{text}, and adding
 %   the proper separators.
 %    \begin{macrocode}
-\cs_new:Npn \lipsum_get_sentences:nnn #1 #2 #3
+\cs_new:Npn \fistrum_get_sentences:nnn #1 #2 #3
   {
     \@@_sep_item:nn { sentence } { start }
     \exp_args:Ne \use_ii_i:nn { { \int_max:nn {#1} { 1 } } }
@@ -1053,14 +1053,14 @@
       {#2} {#3}
   }
 \cs_new:Npn \@@_get_sentences_end:w #1 \s_@@ { }
-\cs_generate_variant:Nn \lipsum_get_sentences:nnn { nnV }
+\cs_generate_variant:Nn \fistrum_get_sentences:nnn { nnV }
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
 % \subsection{User- and developer-level commands}
 %
-% \begin{macro}[int]{\LipsumPar}
+% \begin{macro}[int]{\fistrumPar}
 %   Macro to typeset a single paragraph of \lips\ Was not officially
 %   available in version prior to 2.0.
 %   \begin{arguments}
@@ -1068,7 +1068,7 @@
 %   \end{arguments}
 % Implemented as follows:
 %    \begin{macrocode}
-\NewDocumentCommand \LipsumPar { m }
+\NewDocumentCommand \fistrumPar { m }
   {
     \@@_deprecated:n { LipsumPar }
     \@@_unexpanded_par:n {#1} \par
@@ -1097,27 +1097,27 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_deprecated:n #1
   {
-    \msg_warning:nnn { lipsum } { cmd-deprecated } {#1}
+    \msg_warning:nnn { fistrum } { cmd-deprecated } {#1}
     \cs_gset_eq:NN \@@_deprecated:n \use_none:n
   }
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}[int]{
-%     \SetLipsumParListStart,
-%     \SetLipsumParListEnd,
-%     \SetLipsumParListSurrounders,
-%     \SetLipsumParListItemSeparator,
-%     \SetLipsumParListItemStart,
-%     \SetLipsumParListItemEnd,
-%     \SetLipsumParListItemSurrounders,
-%     \SetLipsumSentenceListStart,
-%     \SetLipsumSentenceListEnd,
-%     \SetLipsumSentenceListSurrounders,
-%     \SetLipsumSentenceListItemSeparator,
-%     \SetLipsumSentenceListItemStart,
-%     \SetLipsumSentenceListItemEnd,
-%     \SetLipsumSentenceListItemSurrounders,
+%     \SetFistrumParListStart,
+%     \SetFistrumParListEnd,
+%     \SetFistrumParListSurrounders,
+%     \SetFistrumParListItemSeparator,
+%     \SetFistrumParListItemStart,
+%     \SetFistrumParListItemEnd,
+%     \SetFistrumParListItemSurrounders,
+%     \SetFistrumSentenceListStart,
+%     \SetFistrumSentenceListEnd,
+%     \SetFistrumSentenceListSurrounders,
+%     \SetFistrumSentenceListItemSeparator,
+%     \SetFistrumSentenceListItemStart,
+%     \SetFistrumSentenceListItemEnd,
+%     \SetFistrumSentenceListItemSurrounders,
 %   }
 %   A dirty loop to quickly define the old command-based user-interface.
 %    \begin{macrocode}
@@ -1150,17 +1150,17 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\SetLipsumDefault}
+% \begin{macro}{\SetFistrumDefault}
 %   Command to change the default range used by \cs{lipsum} and friends.
 %   \begin{arguments}
 %     \item[\meta{range}] Range to be used as default.
 %   \end{arguments}
 % Implemented as:
 %    \begin{macrocode}
-\NewDocumentCommand \SetLipsumDefault { m }
+\NewDocumentCommand \SetFistrumDefault { m }
   {
     \@@_parse_par_range:eNN {#1} \l_@@_a_int \l_@@_b_int
-    \tl_gset:Nx \g_lipsum_default_range_tl
+    \tl_gset:Nx \g_fistrum_default_range_tl
       { \int_use:N \l_@@_a_int - \int_use:N \l_@@_b_int }
   }
 %    \end{macrocode}
@@ -1169,7 +1169,7 @@
 % The following macros are considered to be user-level commands and thus
 % all lower-case.
 %
-% \begin{macro}{\lipsum}
+% \begin{macro}{\fistrum}
 %   \begin{arguments}
 %     \item Range-like string that specifies the number of the
 %       paragraphs taken from \lips\ If omitted, the value set by
@@ -1188,7 +1188,7 @@
 %   \cs{@@_do:nnnn} that does the heavy-lifting, and at the end
 %   executes the code in |#4|.
 %    \begin{macrocode}
-\NewDocumentCommand \lipsum { s O { \g_lipsum_default_range_tl } o }
+\NewDocumentCommand \fistrum { s O { \g_fistrum_default_range_tl } o }
   {
     \@@_do:nnnn {#1} {#2} {#3}
       {
@@ -1200,7 +1200,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\unpacklipsum,\lipsumexp}
+% \begin{macro}{\unpackfistrum,\fistrumexp}
 %   This command does the same as \cs{lipsum}, but instead of
 %   typesetting the paragraphs or sentences, it stores the expanded
 %   content in the \cs{lipsumexp} token list. The tokens between items
@@ -1208,9 +1208,9 @@
 %   \opt{space} or by using the \cs{SetLipsum...List} commands, are
 %   |x|-expanded.
 %    \begin{macrocode}
-\NewDocumentCommand \unpacklipsum { s O { \g_lipsum_default_range_tl } o }
-  { \@@_do:nnnn {#1} {#2} {#3} { \tl_gset_eq:NN \lipsumexp ##1 } }
-\cs_new_eq:NN \lipsumexp \prg_do_nothing:
+\NewDocumentCommand \unpackfistrum { s O { \g_fistrum_default_range_tl } o }
+  { \@@_do:nnnn {#1} {#2} {#3} { \tl_gset_eq:NN \fistrumexp ##1 } }
+\cs_new_eq:NN \fistrumexp \prg_do_nothing:
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1231,17 +1231,17 @@
         { \tl_if_blank_p:n {#3} }
       {
         \tl_set:Nx \l_@@_output_tl
-          { \lipsum_get_range:nn { \l_@@_a_int } { \l_@@_b_int } }
+          { \fistrum_get_range:nn { \l_@@_a_int } { \l_@@_b_int } }
       }
       {
         \str_set:Nn \l_@@_sep_set_str { parsepar }
         \tl_set:Nx \l_@@_output_tl
-          { \lipsum_get_range:nn { \l_@@_a_int } { \l_@@_b_int } }
+          { \fistrum_get_range:nn { \l_@@_a_int } { \l_@@_b_int } }
         \str_set:Nx \l_@@_sep_set_str { \IfBooleanF {#1} { no } star }
         \@@_parse_sentence_range:eNN {#3} \l_@@_a_int \l_@@_b_int
         \tl_set:Nx \l_@@_output_tl
           {
-            \lipsum_get_sentences:nnV { \l_@@_a_int } { \l_@@_b_int }
+            \fistrum_get_sentences:nnV { \l_@@_a_int } { \l_@@_b_int }
               \l_@@_output_tl
           }
       }
@@ -1363,9 +1363,9 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_lang_not_available:
   {
-    \str_if_eq:VVF \g__lipsum_language_tl \languagename
+    \str_if_eq:VVF \g__fistrum_language_tl \languagename
       {
-        \msg_warning:nnx { lipsum } { missing-language }
+        \msg_warning:nnx { fistrum } { missing-language }
           { \g_@@_language_tl }
         \tl_gset_eq:NN \g_@@_language_tl \languagename
       }
@@ -1373,12 +1373,12 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\NewLipsumPar}
+% \begin{macro}{\NewFistrumPar}
 %   Developer-Level macro to add a paragraph to the dummy text used by
 %   \cs{lipsum} and related commands. To specify a new dummy text, see
 %   section~\ref{sec:other-texts}.
 %    \begin{macrocode}
-\cs_new_protected:Npn \NewLipsumPar #1
+\cs_new_protected:Npn \NewFistrumPar #1
   {
     \int_gincr:N \g_@@_par_int
     \tl_gclear_new:c { g_@@_par_ \int_use:N \g_@@_par_int _tl }
@@ -1387,7 +1387,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\SetLipsumText}
+% \begin{macro}{\SetFistrumText}
 %   Used to select and load the text output by \cs{lipsum} and friends.
 %   See the section on loading and defining new outputs for \cs{lipsum}
 %   (section~\ref{sec:other-texts}). It first checks whether the
@@ -1395,7 +1395,7 @@
 %   corresponding lipsum text definition file, and clears remaining
 %   paragraphs from the previous text, in case their lengths differ.
 %    \begin{macrocode}
-\NewDocumentCommand \SetLipsumText { m }
+\NewDocumentCommand \SetFistrumText { m }
   {
     \str_if_eq:VnF \g_@@_text_str {#1}
       {
@@ -1408,11 +1408,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\SetLipsumLanguage}
+% \begin{macro}{\SetFistrumLanguage}
 %   This macro sets the language for hyphenation patterns of the dummy
 %   text.  When a new lipsum text is read, this is reset.
 %    \begin{macrocode}
-\NewDocumentCommand \SetLipsumLanguage { m }
+\NewDocumentCommand \SetFistrumLanguage { m }
   { \tl_gset:Nn \g_@@_language_tl {#1} }
 %    \end{macrocode}
 % \end{macro}
@@ -1420,9 +1420,9 @@
 % \subsection{Package options and defaults}
 %
 % \begin{macro}[int]{
-%     \LipsumRestoreParList,
-%     \LipsumRestoreSentenceList,
-%     \LipsumRestoreAll,
+%     \fistrumRestoreParList,
+%     \fistrumRestoreSentenceList,
+%     \fistrumRestoreAll,
 %   }
 % \begin{macro}{\@@_delim_restore:nnn}
 % \begin{macro}{\@@_restore_par_list:,\@@_restore_sentence_list:}
@@ -1431,7 +1431,7 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_delim_restore:nnn #1 #2 #3
   {
-    \keys_set:nn { lipsum }
+    \keys_set:nn { fistrum }
       {
         #1-before  = , #1-begin  = , #1-end  = , #1-after  = ,
         #1-before* = , #1-begin* = , #1-end* = , #1-after* = ,
@@ -1441,17 +1441,17 @@
 \cs_new_protected:Nn \@@_restore_sentence_list:
   { \@@_delim_restore:nnn { sentence } { ~ } { ~ } }
 \cs_new_eq:NN \@@_restore_par_list: ?
-\cs_new_protected:Npn \LipsumRestoreParList
+\cs_new_protected:Npn \fistrumRestoreParList
   {
     \@@_deprecated:n { LipsumRestoreParList }
     \@@_restore_par_list:
   }
-\cs_new_protected:Npn \LipsumRestoreSentenceList
+\cs_new_protected:Npn \fistrumRestoreSentenceList
   {
     \@@_deprecated:n { LipsumRestoreSentenceList }
     \@@_restore_sentence_list:
   }
-\cs_new_protected:Npn \LipsumRestoreAll
+\cs_new_protected:Npn \fistrumRestoreAll
   {
     \@@_deprecated:n { LipsumRestoreAll }
     \@@_restore_par_list: \@@_restore_sentence_list:
@@ -1461,12 +1461,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\setlipsum}
+% \begin{macro}{\setfistrum}
 %   Here are the options available at load-time and to \cs{setlipsum}.
 %    \begin{macrocode}
-\NewDocumentCommand \setlipsum { +m }
-  { \keys_set:nn { lipsum } {#1} }
-\keys_define:nn { lipsum }
+\NewDocumentCommand \setfistrum { +m }
+  { \keys_set:nn { fistrum } {#1} }
+\keys_define:nn { fistrum }
   {
 %    \end{macrocode}
 %   \opt{nopar} is implemented as a choice key instead of a boolean so
@@ -1497,10 +1497,10 @@
 %    \end{macrocode}
 %   \opt{text} just does \cs{SetLipsumText}.  The |initial| value is not
 %   set here because this chunk of code is executed in \pkg{expl3}
-%   syntax, then thetextloadswithoutspaces, so |\setlipsum{text=lipsum}|
+%   syntax, then thetextloadswithoutspaces, so |\setfistrum{text=lipsum}|
 %   is used later.
 %    \begin{macrocode}
-    text .code:n = \SetLipsumText{#1} ,
+    text .code:n = \SetFistrumText{#1} ,
     text .value_required:n = true ,
 %    \end{macrocode}
 %   \opt{language} sets the language to be used when typesetting.
@@ -1514,7 +1514,7 @@
 %   range to the given value, while \cs{setlipsum}|{default-range}| sets
 %   the range to the ``default default range''.  Pretty neat :)
 %    \begin{macrocode}
-    default-range .code:n = \SetLipsumDefault{#1} ,
+    default-range .code:n = \SetFistrumDefault{#1} ,
     default-range .initial:n = 1-7 ,
     default-range .default:n = 1-7 ,
   }
@@ -1527,7 +1527,7 @@
 %    \begin{macrocode}
 \cs_set_protected:Npn \@@_tmp:w #1 #2 #3
   {
-    \keys_define:nn { lipsum }
+    \keys_define:nn { fistrum }
       {
         #1-before #2 .tl_set:c = l_@@_#1_start         _#3star_tl ,
         #1-begin  #2 .tl_set:c = l_@@_#1_itemstart     _#3star_tl ,
@@ -1548,8 +1548,8 @@
 % (\cs{@@_restore_par_list:} may have been redefined by \opt{nopar}).
 %    \begin{macrocode}
 \ExplSyntaxOff
-\setlipsum{text=lipsum}
-\ProcessKeysOptions{lipsum}
+\setfistrum{text=fistrum}
+\ProcessKeysOptions{fistrum}
 \ExplSyntaxOn
 \@@_restore_par_list:
 \@@_restore_sentence_list:
@@ -1559,14 +1559,14 @@
 %
 % Now define the messages used throughout the package.
 %    \begin{macrocode}
-\msg_new:nnn { lipsum } { invalid-range }
+\msg_new:nnn { fistrum } { invalid-range }
   { Invalid~number~or~range~'#1'. }
-\msg_new:nnn { lipsum } { cmd-deprecated }
+\msg_new:nnn { fistrum } { cmd-deprecated }
   {
     Command~'\iow_char:N\\#1'~deprecated. \\
-    See~the~lipsum~documentation~for~help.
+    See~the~fistrum~documentation~for~help.
   }
-\msg_new:nnn { lipsum } { missing-language }
+\msg_new:nnn { fistrum } { missing-language }
   {
     Unknown~language~'#1'.~Hyphenation~patterns~for~
     '\languagename'~will~be~used~instead.
@@ -1579,7 +1579,7 @@
             with~\iow_char:N\\setotherlanguage{#1}~or~similar.
           }
           {
-            With~LuaTeX,~lipsum~requires~babel~to~get~proper~
+            With~LuaTeX,~fistrum~requires~babel~to~get~proper~
             hyphenation~(you~can~use~
             \iow_char:N\\usepackage[base]{babel}).
           }

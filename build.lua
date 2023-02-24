@@ -1,6 +1,6 @@
 #!/usr/bin/env texlua
-module     = "lipsum"
-pkgversion = "2.7"
+module     = "fistrum"
+pkgversion = "0.1"
 pkgdate    = os.date("%Y-%m-%d")
 
 dofile("config-pdftex.lua")
@@ -12,7 +12,7 @@ checkconfigs =
   }
 
 -- Tagging:
-tagfiles = { "lipsum.dtx", "CHANGELOG.md" }
+tagfiles = { "fistrum.dtx", "CHANGELOG.md" }
 function update_tag(file, content, tagname, tagdate)
   if tagname == nil then
     tagname = pkgversion
@@ -24,11 +24,11 @@ function update_tag(file, content, tagname, tagdate)
     end
   end
   tagstring(
-    "\\def\\lipsumversion{%d+%.%d+%w?}",
-    "\\def\\lipsumversion{" .. tagname .. "}")
+    "\\def\\fistrumversion{%d+%.%d+%w?}",
+    "\\def\\fistrumversion{" .. tagname .. "}")
   tagstring(
-    "\\def\\lipsumdate{%d+-%d+-%d+}",
-    "\\def\\lipsumdate{" .. tagdate .. "}")
+    "\\def\\fistrumdate{%d+-%d+-%d+}",
+    "\\def\\fistrumdate{" .. tagdate .. "}")
   tagstring(
     "## %[Unreleased%]",
     "## [" .. tagname .. "]")
