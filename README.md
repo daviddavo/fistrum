@@ -28,7 +28,16 @@ See the documentation.
 \end {document}
 ```
 
+## Generate new files
+
+The `fistrum-es.txt` and `fistrum-la.txt` files were generated using the following commands:
+
+```bash
+./generate.lua chiquito 150 1932 > fistrum-es.txt
+./generate.lua latin 150 2017 > fistrum-la.txt
+```
+
 ## Things to do before publishing
-- [ ] Autogenerate fistrum-es.txt and fistrum-la.txt
+- [x] Autogenerate fistrum-es.txt and fistrum-la.txt
 - [ ] Revise documentation
 - [ ] Fix tests
