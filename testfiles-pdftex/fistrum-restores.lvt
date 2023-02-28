@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug, check-declarations]{expl3}
+
+\ExplSyntaxOn
+\debug_on:n { deprecation }
+\ExplSyntaxOff
+
+\usepackage[base]{babel}
+\usepackage{fistrum}
+
+\ExplSyntaxOn
+\cs_new_eq:NN \fistrumrange \fistrum_get_range:nn
+\cs_new_eq:NN \fistrumsentences \fistrum_get_sentences:nnn
+\ExplSyntaxOff
+
+\begin{document}
+\START
+
+\SetFistrumParListItemSeparator  { (A) }
+\SetFistrumParListItemSeparator* { (B) }
+\SetFistrumParListEnd  { (C) }
+\SetFistrumParListEnd* { (D) }
+\SetFistrumParListItemSurrounders  { (E) } { (F) }
+\SetFistrumParListItemSurrounders* { (G) } { (H) }
+
+\SetFistrumSentenceListItemSeparator  { (a) }
+\SetFistrumSentenceListItemSeparator* { (b) }
+\SetFistrumSentenceListEnd  { (c) }
+\SetFistrumSentenceListEnd* { (d) }
+\SetFistrumSentenceListItemSurrounders  { (e) } { (f) }
+\SetFistrumSentenceListItemSurrounders* { (g) } { (h) }
+
+\edef\x{\fistrumrange{1}{2}}
+\show\x
+
+\fistrum[1-2]
+
+\edef\x{\fistrumrange{1}{2}}
+\show\x
+
+%
+
+\edef\x{\expanded{%
+  \noexpand\fistrumsentences{3}{4}%
+    {\fistrumrange{1}{2}}}}
+\show\x
+
+\fistrum[1-2][3-4]
+
+\edef\x{\expanded{%
+  \noexpand\fistrumsentences{3}{4}%
+    {\fistrumrange{1}{2}}}}
+\show\x
+
+\end{document}

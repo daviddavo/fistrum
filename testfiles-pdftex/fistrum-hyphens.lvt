@@ -13,21 +13,18 @@
 \debug_on:n { deprecation }
 \ExplSyntaxOff
 
-\usepackage{lipsum}
+\usepackage{fistrum}
 
 \begin{document}
 \START
 
 \hsize=3cm
 
-\SetLipsumText{lipsum}
-\lipsum[1][1-3]
+\SetLipsumText{fistrum-es}
+\fistrum[1][1-3]
 
-\SetLipsumText{lipsum-cs}
-\lipsum[1][1-3]
-
-\SetLipsumText{cicero}
-\lipsum[1][1]
+\SetLipsumText{fistrum-la}
+\fistrum[1][1-3]
 
 {\loggingoutput\clearpage}
 

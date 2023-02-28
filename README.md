@@ -25,7 +25,7 @@ See the documentation.
 
 \begin{document}
 \fistrum
-\end {document}
+\end{document}
 ```
 
 ## Generate new files

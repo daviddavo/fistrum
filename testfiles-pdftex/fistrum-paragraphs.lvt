@@ -1,31 +1,30 @@
 \input{regression-test.tex}
 \documentclass{article}
-\usepackage{lipsum}
+\usepackage{fistrum}
 
 \START
 
 \ExplSyntaxOn
 \cs_new_protected:Npn \test #1
   {
-    \SetLipsumText{#1}
+    \SetFistrumText{#1}
     \TYPE
       {
         Testing~'#1'~
-        (\int_use:N \g__lipsum_par_int \c_space_tl paragraphs):
+        (\int_use:N \g__fistrum_par_int \c_space_tl paragraphs):
       }
-    \int_step_inline:nn { \g__lipsum_par_int }
+    \int_step_inline:nn { \g__fistrum_par_int }
       {
         \TEST { \LipsumPar{##1},~content }
           {
-            \tl_set:Nx \l_tmpa_tl { \__lipsum_unexpanded_par:n {##1} }
+            \tl_set:Nx \l_tmpa_tl { \__fistrum_unexpanded_par:n {##1} }
             \TYPE { \exp_not:V \l_tmpa_tl }
           }
       }
   }
 \ExplSyntaxOff
 
-\test{lipsum}
-\test{cicero}
-\test{lipsum-cs}
+\test{fistrum-es}
+\test{fistrum-la}
 
 \END

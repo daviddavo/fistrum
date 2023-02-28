@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{fistrum}
+
+\def\print{\typeout{%
+  ================================^^J%
+  \fistrumexp}}
+
+\START
+
+\unpackfistrum\print
+
+\unpackfistrum[1]\print
+
+\unpackfistrum[123-134]\print
+
+\unpackfistrum*\print
+
+\unpackfistrum*[8]\print
+
+\unpackfistrum*[111-119]\print
+
+\SetLipsumDefault{111}
+\unpackfistrum \print
+\unpackfistrum* \print
+
+
+\SetLipsumDefault{134-136}
+\unpackfistrum \print
+\unpackfistrum* \print
+
+
+\SetLipsumDefault{1-7}
+% \SetLipsumTerminator{¶ }
+% \SetLipsumStarTerminator{\ *\ }
+\unpackfistrum \print
+
+\unpackfistrum* \print
+
+
+\def\foo{ *** foo ***\ }
+% \SetLipsumTerminator{\foo }
+% \SetLipsumStarTerminator{ + \foo\ +}
+\unpackfistrum\print
+\unpackfistrum*\print
+
+\unpackfistrum[1-3][4-9]\print
+
+\unpackfistrum[1][1]\print
+
+\unpackfistrum[1-52][1-300]\print
+
+\unpackfistrum[1][300-400]\print
+
+\END

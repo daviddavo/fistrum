@@ -1,0 +1,19 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[base]{babel}
+\usepackage{fistrum}
+
+\begin{document}
+\ttfamily % avoid hyphenation
+\START
+\TEST{\fistrum[1][1-2], content, check space between sentences}
+{
+  \showoutput\fistrum[1][1-2]\newpage
+}
+\TEST{\fistrum[104-105][10-11], content, check space between sentences spanning pars }
+{
+  \showoutput\fistrum[104-105][10-11]\newpage
+}
+
+\end{document}
+\END
