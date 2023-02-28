@@ -1,0 +1,31 @@
+\input{regression-test.tex}
+\RequirePackage{fistrum}
+\def\lipsonehundertandfour{%
+  Pecador ahorarr la caidita no puedor por la gloria de mi madre condemor va usté muy cargadoo de la pradera ese que llega. Llevame al sircoo diodeno por la gloria de mi madre caballo blanco caballo negroorl pecador hasta luego Lucas a gramenawer benemeritaar no te digo trigo por no llamarte Rodrigor. Ese hombree apetecan fistro ahorarr. Ese que llega ese hombree benemeritaar al ataquerl no puedor mamaar va usté muy cargadoo tiene musho peligro la caidita por la gloria de mi madre. A gramenawer pupita hasta luego Lucas a wan diodeno de la pradera ese hombree se calle ustée te voy a borrar el cerito ese que llega. Quietooor condemor diodeno pecador a wan tiene musho peligro no te digo trigo por no llamarte Rodrigor está la cosa muy malar caballo blanco caballo negroorl la caidita mamaar.}%
+}
+\def\lipsoneone{Lorem fistrum no puedor caballo blanco caballo negroorl de la pradera se calle ustée.}
+
+\START
+
+\SetFistrumParListEnd{\par}
+
+\unpackfistrum[104]
+\TESTEXP{\unpackfistrum[104], fistrumexp, content}{
+%<test>\fistrumexp
+%<expect>\lipsonehundertandfour\par
+}
+\unpackfistrum*[104]
+\TESTEXP{\unpackfistrum*[104], fistrumexp, content}{%
+%<test>\fistrumexp
+%<expect>\lipsonehundertandfour
+}
+\END
+
+
+
+
+% \endinput
+% Local Variables:
+% mode: doctex
+% TeX-master: t
+% End:

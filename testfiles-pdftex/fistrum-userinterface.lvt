@@ -1,0 +1,41 @@
+% Test file to check if the user-level and developer level commands are defined
+
+\input{regression-test.tex}
+
+\documentclass{article}
+\usepackage{expl3}
+\usepackage{fistrum}
+\START
+\TYPE{If this test fails, the documented user interface is not available}
+
+\ExplSyntaxOn
+
+\tl_map_inline:nn
+  {
+    \fistrum
+    \unpackfistrum
+    \fistrumexp
+    \SetFistrumDefault
+    % Deprecated:
+    \FistrumPar
+    \SetFistrumParListStart
+    \SetFistrumParListEnd
+    \SetFistrumParListSurrounders
+    \SetFistrumParListItemSeparator
+    \SetFistrumParListItemStart
+    \SetFistrumParListItemEnd
+    \SetFistrumParListItemSurrounders
+    \SetFistrumSentenceListStart
+    \SetFistrumSentenceListEnd
+    \SetFistrumSentenceListSurrounders
+    \SetFistrumSentenceListItemSeparator
+    \SetFistrumSentenceListItemStart
+    \SetFistrumSentenceListItemEnd
+    \SetFistrumSentenceListItemSurrounders
+  }
+  {
+    \exp_args:Nx \TEST { \string#1,~check~if~exists }
+      { \cs_if_exist:NTF #1 { \TRUE } { \FALSE } \TYPE { \token_to_meaning:c { \cs_to_str:N #1 ~ code } } }
+  }
+
+\END
