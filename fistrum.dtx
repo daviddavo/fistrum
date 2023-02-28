@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% This file is part of the package lipsum for use with LaTeX2e.
+% This file is part of the package fistrum for use with LaTeX2e.
 %
 % Function: Access to 150 paragraphs of the well known Lorem Ipsum dummy text.
 %
@@ -13,14 +13,14 @@
 % version 2005/12/01 or later.
 %
 % Please send error reports and suggestions for improvements to
-%    https://github.com/PhelypeOleinik/lipsum
+%    https://github.com/daviddavo/fistrum
 %
 \def\fistrumversion{0.1}
 \def\fistrumdate{2023-02-23}
 %<*driver>
 \ProvidesFile{fistrum.dtx}%
   [\fistrumdate\space v\fistrumversion\space
-   Access to 150 of Lorem Fistrum dummy text]
+    Por la gloria de mi madre, ese pedazo de texto de ejemplo.]
 \documentclass{l3doc}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -45,7 +45,7 @@
 
 \usepackage{fistrum,multicol}
 \usepackage{multirow}
-\usepackage[latin, english]{babel}
+\usepackage[latin, spanish, es-noshorthands]{babel}
 \makeatletter
 \newcommand\@subtitle{}
 \newcommand\subtitle[1]{%
@@ -77,7 +77,7 @@
    \begin{minipage}{\textwidth+.75\fullmargin}}
   {\end{minipage}}
 \newcommand\opt[1]{\textsf{#1}} % l3doc does not have some markup for package options...
-\newcommand\lips{\emph{Lorem ipsum\ldots}}
+\newcommand\fist{\emph{Lorem fistrum\ldots}}
 \renewcommand\topfraction{.85}
 \renewcommand\textfraction{.15}
 \renewcommand\floatpagefraction{.85}
@@ -102,164 +102,52 @@
 % \fi
 %
 % \title{\pkg{fistrum}}
-% \subtitle{Access to 150 paragraphs of Lorem Ipsum dummy
+% \subtitle{Access to 150 paragraphs of Lorem Fistrum very dummy
 % text\thanks{Version: \fistrumversion}^^A
-% \thanks{Since March 2021, Phelype Oleinik maintains this package
-%   (\href{mailto:phelype.oleinik@latex-project.org}
-%        {phelype.oleinik\meta{at}latex-project.org}).}}
-% \author{Patrick Happel\thanks{patrick.happel@rub.de}}
+% \thanks{Basado en \href{https://chiquitoipsum.com}{Chiquito Ipsum} de 
+% Isabel Nieto, Carlos A. Hernández y Gauss Multimedia}.
+% }
+% \author{David Davó\thanks{david@ddavo.me}}
 % \date{\today}
 % \RecordChanges
-% \changes{v1.0}{2004/05/15}{First release}
-% \changes{v1.1}{2011/02/08}{Added support for typesetting dummy text without
-% paragraphs in between.}
-% \changes{v1.2}{2011/04/14}{Bug fix (thanks to  Florent Chervet and Ulrike
-% Fischer for reporting).}
-% \changes{v1.3}{2014/07/19}{Introduced some improvements and provided some
-% new macros (thanks to tex.stackexchange user egreg).}
-% \changes{v1.3a}{2017/08/10}{Fixed a type in the documentation (thanks to
-% Vincent Belaïche). This version never made its way on CTAN due to some
-% version naming conflicts. Since the change here was only in the
-% documentation, I first didn't want it to be 1.3a and later had no time to
-% update it properly.}
-% \changes{v2.0}{2018/11/07}{Added the possibility to fetch a number of sentences from the
-% lipsum paragraphs (thanks to Frank Mittelbach).}
-% \changes{v2.0}{2018/11/07}{Rewritten code in \pkg{expl3} syntax.}
-% \changes{v2.1}{2018/11/18}{Changed defaults, now nothing is typeset at the
-% end of any list.}
-% \changes{v2.1a}{2018/11/24}{Added forgotten ins-file to CTAN. This requires
-% a new version number.}
-% \changes{v2.2}{2018/12/25}{replaced \cs{tex_par:D} by \cs{par} to avoid
-% incompatibilities with \LaTeX2e's |list|-environment. Thanks to Karl Hagen
-% for reporting. See \url{ttps://github.com/patta42/lipsum/issues/12}.}
-% \changes{v2.3}{2021/03/03}{Remove dependency on an \pkg{xparse} internal
-%   macro.  \pkg{lipsum}'s new home at
-%   \url{https://github.com/PhelypeOleinik/lipsum}}
-% \changes{v2.4}{2021/06/03}{Major changes documented in \texttt{CHANGELOG.md}.}
+% \changes{v0.1}{Feb 2023}{First release}
+% \maketitle{\pkg{fistrum} es un paquete de \LaTeX{} derivado de \pkg{lipsum} que produce texto de ejemplo
+% para usarlo en documentos y ejemplos. Los párrafos se han tomado con permiso de
+% \url{https://www.chiquitoipsum.com/}.
 %
-% \maketitle{\pkg{lipsum} is a \LaTeX{} package that produces dummy text
-% to be used in test documents or examples. The paragraphs are taken with
-% permission from \url{https://www.lipsum.com/}, thanks to James Wilson for
-% this work. Furthermore, the following people contributed to \pkg{lipsum} by
-% suggesting improvements, correcting bugs or finding typos in the
-% documentation: Florent Chervet, Ulrike Fischer, Vincent Belaïche, Enrico
-% Gregorio, Frank Mittelbach, Karl Hagen.
-%
-% Please, file bug reports, typos in the documentation or
-% feature requests as an issue on
-% \url{https://github.com/PhelypeOleinik/lipsum/issues}.}
+% Por favor, si encuentras un bug, alguna errata o tienes alguna sugerencia
+% abre un \textit{issue} en
+% \url{https://github.com/daviddavo/fistrum}.}
 %
 % \begin{documentation}
 %
-% \section{Introduction}
+% \section{Al ataquerl}
+%
+% \textbf{Nota: La documentación es una copia de la de lipsum, pueden haber quedado erratas}
 %
 % To load the package, write
 % \begin{verbatim}
-%     \usepackage{lipsum}
+%     \usepackage{fistrum}
 % \end{verbatim}
 % in the preamble of your document. Probably the most important macro
-% provided by this package is \DescribeMacro{\fistrum}\cs{lipsum}, which
-% typesets the \emph{Lorem ipsum} paragraphs. The first optional
+% provided by this package is \DescribeMacro{\fistrum}\cs{fistrum}, which
+% typesets the \emph{Lorem fistrum} paragraphs. The first optional
 % argument allows to specify the range of the paragraphs. For example,
 % \verb|\fistrum[4-57]| typesets the paragraphs 4 to 57 and accordingly,
 % \verb|\fistrum[23]| typesets the 23\textsuperscript{rd} paragraph.
-% Using \cs{lipsum} without its optional argument typesets the
-% paragraphs 1--7 of \lips
+% Using \cs{fistrum} without its optional argument typesets the
+% paragraphs 1--7 of \fist
 %
-% As of version 2.0, \cs{lipsum} has a second optional argument which allows
+% As of version 2.0, \cs{fistrum} has a second optional argument which allows
 % selecting a range of sentences from the paragraphs. To get the sentences
 % four to eight from paragraphs three to nine, use |\fistrum[3-9][4-8]|.
 % The sentences are counted from the first sentence of the first selected
 % paragraph.  In the previous example, sentence number~1 is the first
 % sentence of paragraph number~3.
 %
-% \subsection{Foreword to Version 2.4}
-% \label{sec:foreword2.4}
-%
-% Version~2.4 received another almost complete rewrite focussing on the
-% internal structure of the package, and some minor fixes (see the
-% \texttt{CHANGELOG} for more details).
-%
-% The package now ships with a new dummy text, in pseudo-Czech, provided
-% by Ondřej Macek.  To select this text, load the package with
-% |\usepackage[text=lipsum-cs]{lipsum}| or use
-% \cs{setlipsum}|{text=lipsum-cs}|.
-%
-% The dummy texts now have a language metadata which is used to select
-% the proper hyphenation patterns to the dummy text.  For compatibility
-% with old documents you can load \pkg{lipsum} with
-% |\usepackage[auto-lang=false]{lipsum}| or, as above, use
-% \cs{setlipsum}|{auto-lang=false}|.
-%
-% Finally, as demonstrated above, a new macro \cs{setlipsum} was added
-% to change package options anywhere in the document, so you may change,
-% for example, the dummy text printed by \cs{lipsum} on-the-fly by using
-% \cs{setlipsum}|{text=|\meta{name}|}| \secref{sec:other-texts} for a
-% list of available texts). In general, a key-val syntax was added which
-% will eventually replace the command-based syntax for package settings.
-% For the time being, both versions are available.
-%
-% \subsection{Foreword to Version 2.0}\label{sec:foreword2.0}
-%
-% Version 2.0 of \pkg{lipsum} is a complete (well, nearly complete)  rewrite
-% of the code in \pkg{expl3}
-% syntax. I have never used \pkg{expl3} before and thus the code might be too
-% complicated, might use wrong or badly chosen data types or weird function
-% names. I am happy to receive comments on this.
-%
-% Due the complete rewrite, some internals have changed which might impact
-% older documents. Since, however, I guess that \pkg{lipsum} is not used for
-% documents with true, important, content, I think potentially breaking up old
-% documents is not a big issue here. The changes are:
-% \begin{itemize}
-% \item The package option \opt{nopar} now uses a \cs{space} as terminator,
-% instead of \cs{relax}.
-% \item The commands \cs{UnpackLipsum} and \cs{UnpackLipsum*} are no longer
-% available. The effect of \cs{UnpackLipsum} now is default for
-% \cs{unpacklipsum} (or \cs{unpacklipsum*}, depending on the package
-% option). The effect of \cs{UnpackLipsum*} can be mimicked by using
-% \cs{LipsumProtect}\Arg{command}, as in the following example:
-% \begin{explbox}
-% \begin{verbatim}
-% \documentclass{article}
-% \usepackage{lipsum,xcolor}
-% \newcommand\foo{}
-% \SetFistrumParListItemEnd{\fistrumProtect{\foo}}
-%
-% \begin{document}
-% \renewcommand\foo{\color{.!75!red}}
-%   { \fistrumexp }
-%
-% \newcounter{mycnt}\setcounter{mycnt}{1}
-% \renewcommand\foo{%
-%   (\themycnt)\stepcounter{mycnt}}
-% \fistrumexp
-% \end{document}
-% \end{verbatim}
-% \end{explbox}
-% \item The internal macros \cs{lips@i}, \cs{lips@ii}, \cs{lips@iii}, \ldots,
-%   \cs{lips@cl} are no longer available.
-% \item All other internal macros (with one exception) are no longer available,
-%   too.
-% \end{itemize}
-%
-% \subsection{Foreword to version 2.2}
-%
-% As of version 2.2, \pkg{lipsum} provides a simple interface to define other
-% texts to be used as output of the \cs{lipsum}-family of commands. This was
-% heavily inspired by an issue raised by
-% \emph{svenper} on
-% github\footnote{\url{https://github.com/patta42/lipsum/issues/13}}. However,
-% the implementation of this interface might not match the needs of everyone
-% who wants to provide a dummy text in another language. Comments and
-% suggestions on this are very welcome.
-%
-% Please note that the documentation still only refers to the
-% \emph{Lorem ipsum} text.
-%
 % \section{Usage}
 %
-% \pkg{lipsum} was intended to quickly provide a way to fill a page or two to
+% \pkg{fistrum} was intended to quickly provide a way to fill a page or two to
 % analyze the page
 % layout\footnote{\url{https://groups.google.com/d/topic/de.comp.text.tex/oPeLOjkrLfk}}.
 % While it has grown in the meanwhile and now provides some more advanced
@@ -269,11 +157,11 @@
 % \subsection{Package Options}
 % \label{sec:pkg-opt}
 %
-% \pkg{lipsum} outputs a range of paragraphs taken from the \lips\ dummy
+% \pkg{fistrum} outputs a range of paragraphs taken from the \fist\ dummy
 % text. The package options control mainly the behaviour of the
-% \cs{lipsum} and \cs{unpacklipsum} commands, and can be set at
-% load-time with \cs{usepackage}|[|\meta{option}|]{lipsum}|, or later in
-% the document by using \cs{setlipsum}|{|\meta{option}|}|.
+% \cs{fistrum} and \cs{unpackfistrum} commands, and can be set at
+% load-time with \cs{usepackage}|[|\meta{option}|]{fistrum}|, or later in
+% the document by using \cs{setfistrum}|{|\meta{option}|}|.
 %
 % \begingroup
 %   \RenewDocumentCommand \item { r[] e= d() }
@@ -286,13 +174,13 @@
 %
 % \item[nopar]={boolean}(false)
 %   Changes the initial default separator between each paragraph of
-%   \cs{lipsum} from \cs{par} to \cs{space}, and the other way around
-%   for \cs{lipsum*}.
-% \item[text]={name}(lipsum)
-%   Selects the dummy text \meta{name} that is used by \cs{lipsum} and
-%   \cs{unpacklipsum} \secref{sec:other-texts}.
+%   \cs{fistrum} from \cs{par} to \cs{space}, and the other way around
+%   for \cs{fistrum*}.
+% \item[text]={name}(fistrum-la)
+%   Selects the dummy text \meta{name} that is used by \cs{fistrum} and
+%   \cs{unpackfistrum} \secref{sec:other-texts}.
 % \item[language]={lang}(latin)
-%   Sets the language to be used by \cs{lipsum} to typeset the currently
+%   Sets the language to be used by \cs{fistrum} to typeset the currently
 %   active dummy text \secref{sec:hyphenation}.  Changing the dummy text
 %   with the \opt{text} option will also change the current
 %   \opt{language}.
@@ -301,11 +189,11 @@
 %   version 2.3, in which this option (didn't exist thus) was |false| by
 %   default.  See section~\ref{sec:hyphenation} for more details.
 % \item[default-range]={p_i\texttt{-}p_f}(1-7)
-%   Sets the default range of paragraphs produced by \cs{lipsum} when no
+%   Sets the default range of paragraphs produced by \cs{fistrum} when no
 %   optional argument is provided.  The value to \opt{default-range}
 %   obeys the \meta{range} syntax described in
 %   section~\ref{sec:range-syntax}.  If no value is given to
-%   \opt{default-range} (that is, \cs{setlipsum}|{default-range}|), then
+%   \opt{default-range} (that is, \cs{setfistrum}|{default-range}|), then
 %   the default is reset to |1-7|.
 %
 % \endgroup
@@ -348,9 +236,9 @@
 %
 % \begin{function}{\fistrum}
 %   \begin{syntax}
-%     \cs{lipsum}\meta{*}\oarg{par range}\oarg{sentence range}
+%     \cs{fistrum}\meta{*}\oarg{par range}\oarg{sentence range}
 %   \end{syntax}
-%   \cs{lipsum} outputs the \meta{par range} from the
+%   \cs{fistrum} outputs the \meta{par range} from the
 %   currently active dummy text.  If \meta{par range} is not given
 %   or is empty, the \opt{default-range} (initially |1-7|) is output.
 %   ^^A
@@ -361,7 +249,7 @@
 %   If the \meta{*} version is used, a different set of separators is
 %   inserted around the paragraphs or sentences.
 %
-%   \cs{lipsum} changes the active language to that of the dummy text
+%   \cs{fistrum} changes the active language to that of the dummy text
 %   for typesetting, so the proper hyphenation patterns are used.
 %   See section~\ref{sec:hyphenation}.
 %   ^^A
@@ -372,21 +260,21 @@
 %
 % \begin{function}{\unpackfistrum,\fistrumexp}
 %   \begin{syntax}
-%     \cs{unpacklipsum}\meta{*}\oarg{par range}\oarg{sentence range}
+%     \cs{unpackfistrum}\meta{*}\oarg{par range}\oarg{sentence range}
 %     \ldots
-%     \cs{lipsumexp}
+%     \cs{fistrumexp}
 %   \end{syntax}
-%   \cs{unpacklipsum} selects the paragraphs and/or sentences exactly as
-%   described for \cs{lipsum}, but instead of outputting them, it saves
-%   the selected text in the \cs{lipsumexp} macro. Additionally,
-%   \cs{unpacklipsum} \ldots\cs{lipsumexp} is not completely equivalent
-%   to \cs{lipsum} because it doesn't change languages as \cs{lipsum}
+%   \cs{unpackfistrum} selects the paragraphs and/or sentences exactly as
+%   described for \cs{fistrum}, but instead of outputting them, it saves
+%   the selected text in the \cs{fistrumexp} macro. Additionally,
+%   \cs{unpackfistrum} \ldots\cs{fistrumexp} is not completely equivalent
+%   to \cs{fistrum} because it doesn't change languages as \cs{fistrum}
 %   does.
 % \end{function}
 %
 % \begin{function}{\setfistrum}
 %   \begin{syntax}
-%     \cs{setlipsum}\Arg{key-val list}
+%     \cs{setfistrum}\Arg{key-val list}
 %   \end{syntax}
 %   Applies the \meta{key-val list} of options to the package.  The
 %   options are described in section~\ref{sec:pkg-opt} and in
@@ -400,7 +288,7 @@
 %
 % \begin{function}{\SetFistrumText}
 %   \begin{syntax}
-%     \cs{SetLipsumDefault}\Arg{name}
+%     \cs{SetFistrumDefault}\Arg{name}
 %   \end{syntax}
 %   Loads the dummy text \meta{name} \secref{sec:other-texts}.
 %   This command does the same as option \opt{text}, but it is
@@ -409,9 +297,9 @@
 %
 % \begin{function}{\SetFistrumDefault}
 %   \begin{syntax}
-%     \cs{SetLipsumDefault}\Arg{range}
+%     \cs{SetFistrumDefault}\Arg{range}
 %   \end{syntax}
-%   Sets the default range for \cs{lipsum} and \cs{unpacklipsum}.
+%   Sets the default range for \cs{fistrum} and \cs{unpackfistrum}.
 %   This command does the same as option \opt{default-range}, but it is
 %   kept for backwards compatibility.
 % \end{function}
@@ -419,7 +307,7 @@
 % \section{General remarks on behaviour}
 %
 % Here are some topics that are general considerations about the
-% behaviour of \pkg{lipsum} and its commands.  These are technicalities
+% behaviour of \pkg{fistrum} and its commands.  These are technicalities
 % that most end users don't care too much about, unless you are trying
 % to do something beyond the usual ``print me some dummy text''.
 %
@@ -463,7 +351,7 @@
 % \subsection{Hyphenation patterns}
 % \label{sec:hyphenation}
 %
-% Since version~2.4, the command \cs{lipsum} automatically changes the
+% Since version~2.4, the command \cs{fistrum} automatically changes the
 % hyphenation patterns when typesetting a dummy text, so that
 % line-breaking looks better \secref{sec:foreword2.4}.  This feature is
 % on by default, so if you need the old behaviour you have to explicitly
@@ -480,13 +368,13 @@
 % \subsection{Paragraph and sentence separators}
 % \label{sec:separators}
 %
-% As may be clear by now, \pkg{lipsum} has two modes of operation:
+% As may be clear by now, \pkg{fistrum} has two modes of operation:
 % sentence output, and paragraph output, selected by providing or not
-% providing the second optional argument to \cs{lipsum}.  In each mode,
+% providing the second optional argument to \cs{fistrum}.  In each mode,
 % the dummy text is separated into chunks (paragraphs or sentences),
 % which are counted, and then output accordingly.
 %
-% When \cs{lipsum} (or \cs{unpacklipsum}) is used with a single (or no)
+% When \cs{fistrum} (or \cs{unpackfistrum}) is used with a single (or no)
 % optional argument, then a range of paragraphs is output, along with
 % some ``separators'' (in the lack of a better name) between paragraphs,
 % around each paragraph, and before and after the whole output.
@@ -534,11 +422,11 @@
 %   \node [item,fill=blue!40 ] at (12,0) {\sep{after\ }};
 % \end{tikzpicture}
 %
-% When \cs{lipsum} is called, the first thing it outputs is the
+% When \cs{fistrum} is called, the first thing it outputs is the
 % \opt{par-before} tokens.  These tokens are output unconditionally,
 % regardless of how many (if any) paragraph is output.
 %
-% Then, before each paragraph in the range, \cs{lipsum} outputs the
+% Then, before each paragraph in the range, \cs{fistrum} outputs the
 % \opt{par-begin} tokens, and then the actual text of the
 % \meta{paragraph}, and then the \opt{par-end} tokens.  These tokens are
 % output conditionally, if the paragraph text is output.  If more than
@@ -556,13 +444,13 @@
 % tokens are still output.
 %
 % The explanation above is equally valid for the starred variants.  If
-% \cs{lipsum}|*| is used, the \opt{par-before*} tokens are
+% \cs{fistrum}|*| is used, the \opt{par-before*} tokens are
 % inserted, and so on.  It is also true for sentences (starred or
 % otherwise), replacing |par| in the option names by |sentence|, so when
 % you use, for example, |\fistrum[][1-9]|, the \opt{sentence-before}
 % tokens will be unconditionally inserted, and so on.
 %
-% Note that, when \cs{lipsum} is used in sentence-mode (for example,
+% Note that, when \cs{fistrum} is used in sentence-mode (for example,
 % with |\fistrum[1-3][1-9]|), only the |sentence-...| tokens are inserted
 % in the output, regardless of how many paragraphs those sentences were
 % collected from. In the same way, if paragraph-mode is being used, only
@@ -570,7 +458,7 @@
 %
 % \subsubsection{Deprecated command-based syntax}
 %
-% Older versions of \pkg{lipsum} (from 2.0 to 2.3) provided~10 CamelCase
+% Older versions of \pkg{fistrum} (from 2.0 to 2.3) provided~10 CamelCase
 % commands for changing the separators, but the syntax was rather
 % cumbersome to use, so the keyval syntax presented thus far was
 % introduced in the hopes of making things a bit easier.  The old
@@ -651,43 +539,43 @@
 % \section{Loading and defining dummy texts}
 % \label{sec:other-texts}
 %
-% Starting with \pkg{lipsum} v2.2, a simple interface is provided to
-% define and load other texts for the output of \cs{lipsum} and friends.
+% Starting with \pkg{fistrum} v2.2, a simple interface is provided to
+% define and load other texts for the output of \cs{fistrum} and friends.
 % This interface can, for example, be used to implement dummy texts in
 % different languages without re-coding the logic implemented by
-% \pkg{lipsum}.
+% \pkg{fistrum}.
 %
 % \begin{function}{\NewFistrumPar}
 %   \begin{syntax}
-%     \cs{NewLipsumPar}\Arg{paragraph}
+%     \cs{NewFistrumPar}\Arg{paragraph}
 %   \end{syntax}
-%   In order to provide a new text that will be used by \pkg{lipsum},
-%   define the text by using a set of \cs{NewLipsumPar}\Arg{paragraph}
-%   commands in a file with the ending |.ltd.tex| (|ltd| means
-%   \emph{lipsum text definition}\footnotemark{}) to a location where
+%   In order to provide a new text that will be used by \pkg{fistrum},
+%   define the text by using a set of \cs{NewFistrumPar}\Arg{paragraph}
+%   commands in a file with the ending |.ftd.tex| (|ftd| means
+%   \emph{fistrum text definition}\footnotemark{}) to a location where
 %   your \TeX{} system will find it. The \meta{paragraph}-argument is a
 %   single paragraph of the new text. Thus, the first occurence of
-%   \cs{NewLipsumPar} defines the first paragraph, the second occurence
+%   \cs{NewFistrumPar} defines the first paragraph, the second occurence
 %   the second paragraph and so on.
 % \end{function}
 % \footnotetext{To avoid name clashes with files using general languages
-% as names, I chose to introduce the |.ltd.tex| file ending. I did not
+% as names, I chose to introduce the |.ftd.tex| file ending. I did not
 % find a file with this ending in my |texmf|-tree, so I guess it is
 % safe.}
 %
 % \begin{function}{\SetFistrumLanguage}
 %   \begin{syntax}
-%     \cs{SetLipsumLanguage}\Arg{lang}
+%     \cs{SetFistrumLanguage}\Arg{lang}
 %   \end{syntax}
-%   Additionally, tell \pkg{lipsum} the language of the dummy text using
-%   \cs{SetLipsumLanguage}\Arg{lang} somewhere in the |.ltd.tex| file.
+%   Additionally, tell \pkg{fistrum} the language of the dummy text using
+%   \cs{SetFistrumLanguage}\Arg{lang} somewhere in the |.ftd.tex| file.
 % \end{function}
 %
 % \medskip
 %
-% To specify the new text as output for \cs{lipsum} and friends, use
-% \cs{setlipsum}|{|\opt{text}|=|\meta{name}|}|, where \meta{name} is the
-% name of the file without the ending |.ltd.tex|, as given in the table
+% To specify the new text as output for \cs{fistrum} and friends, use
+% \cs{setfistrum}|{|\opt{text}|=|\meta{name}|}|, where \meta{name} is the
+% name of the file without the ending |.ftd.tex|, as given in the table
 % below.  When a new dummy text is loaded, the previous one is cleared,
 % and the language is changed as well, according to the table.
 %
@@ -695,21 +583,16 @@
 % \begin{wide}
 % \begin{tabularx}{\textwidth}{lllX}
 %   \toprule
-%     File (\texttt{.ltd.tex}) & Language & Source & Description \\
+%     File (\texttt{.ftd.tex}) & Language & Source & Description \\
 %   \midrule
-%     \texttt{lipsum} & Latin
-%       & James Wilson
-%         & Contains the standard \emph{Lorem ipsum} dummy text,
-%           obtained from \url{https://www.lipsum.com} (default). \\
-%     \texttt{cicero} & Latin
-%       & GH user \href{https://github.com/svenper}{svenper}
-%         & Contains the speech by Cicero which inspired the \lips{}
-%           dummy text. \\
-%     \texttt{lipsum-cs} & Czech
-%       & Ondřej Macek
-%         & Lipsum dummy text in the Czech language, obtained from
-%           Petr Staníček's website:
-%             \url{https://www.wellstyled.com/tools/dummy-cz}. \\
+%     \texttt{fistrum-la} & Latin
+%       & Chiquito
+%         & Contiene el texto \emph{Lorem fistrum} tras seleccionar la opción
+%           latín en \url{https://www.chiquitoipsum.com/}. \\
+%     \texttt{fistrum-es} & Spanish
+%       & Chiquito
+%         & Contiene el texto \emph{Lorem fistrum} tras seleccionar la opción
+%           fistrum en \url{https://www.chiquitoipsum.com/}. \\
 %   \bottomrule
 % \end{tabularx}
 % \end{wide}
@@ -717,22 +600,22 @@
 %
 % \subsection{Guidelines on providing new dummy texts}
 %
-% \cs{SetLipsumText} more or less just uses an \cs{input} or, to be more
-% precise, the \LaTeX3-variant \cs{file_input:n}, to load the |.ltd.tex|
+% \cs{SetFistrumText} more or less just uses an \cs{input} or, to be more
+% precise, the \LaTeX3-variant \cs{file_input:n}, to load the |.ftd.tex|
 % file. This means, that the file is not necessarily loaded in the
 % preamble of the document and thus the contents of the file underlie
 % the respective restrictions.
 %
 % Should you want a new dummy text, create an issue in the GitHub
-% repository\footnote{\url{https://github.com/PhelypeOleinik/lipsum}}
+% repository\footnote{\url{https://github.com/daviddavo/fistrum}}
 % with the source for the dummy text.
 %
 % Should you prefer to distribute the dummy text as a separate package,
-% make sure that the text follows the layout of \pkg{lipsum}'s dummy
+% make sure that the text follows the layout of \pkg{fistrum}'s dummy
 % texts, so that everything works correctly.  The dummy text definition
-% file should contain a line with \cs{SetLipsumLanguage}, and then as
-% many \cs{NewLipsumPar} entries as there are paragraphs in the dummy
-% text.  Make sure that the file has the |.ltd.tex| extension, and
+% file should contain a line with \cs{SetFistrumLanguage}, and then as
+% many \cs{NewFistrumPar} entries as there are paragraphs in the dummy
+% text.  Make sure that the file has the |.ftd.tex| extension, and
 % everything should work smoothly.
 %
 % \end{documentation}
@@ -742,11 +625,11 @@
 %
 % \begin{implementation}
 %
-% \section{\pkg{lipsum} Implementation}
+% \section{\pkg{fistrum} Implementation}
 %
 %    \begin{macrocode}
 %<*package>
-%<@@=lipsum>
+%<@@=fistrum>
 %    \end{macrocode}
 %
 % \subsection{Variables}
@@ -766,7 +649,7 @@
 % \end{variable}
 %
 % \begin{variable}[int]{\g_fistrum_default_range_tl}
-%   The default range for lipsum paragraphs.
+%   The default range for fistrum paragraphs.
 %    \begin{macrocode}
 \tl_new:N \g_fistrum_default_range_tl
 %    \end{macrocode}
@@ -781,7 +664,7 @@
 % \end{variable}
 %
 % \begin{variable}{\g_@@_text_str}
-%   Holds the current text loaded for the output of \cs{lipsum} and
+%   Holds the current text loaded for the output of \cs{fistrum} and
 %   friends. Used to avoid loading the same text definition if it is
 %   already used.
 %    \begin{macrocode}
@@ -1061,7 +944,7 @@
 % \subsection{User- and developer-level commands}
 %
 % \begin{macro}[int]{\fistrumPar}
-%   Macro to typeset a single paragraph of \lips\ Was not officially
+%   Macro to typeset a single paragraph of \fist\ Was not officially
 %   available in version prior to 2.0.
 %   \begin{arguments}
 %     \item Number of the paragraph to typeset.
@@ -1070,13 +953,13 @@
 %    \begin{macrocode}
 \NewDocumentCommand \fistrumPar { m }
   {
-    \@@_deprecated:n { LipsumPar }
+    \@@_deprecated:n { FistrumPar }
     \@@_unexpanded_par:n {#1} \par
   }
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{Tokens surrounding the \lips\ content}
+% \subsection{Tokens surrounding the \fist\ content}
 %
 % \begin{macro}{\@@_element_set:nnn}
 %   A general macro for setting starred/non-starred versions of several
@@ -1127,10 +1010,10 @@
       { #2 \tl_if_empty:nTF {#4} {#3} { start } }
     \use:e
       {
-        \NewDocumentCommand \exp_not:c { SetLipsum #1 List #2 #3 }
+        \NewDocumentCommand \exp_not:c { SetFistrum #1 List #2 #3 }
             { s +m \tl_if_empty:nF {#4} { +m } }
           {
-            \@@_deprecated:n { SetLipsum #1 List #2 #3 }
+            \@@_deprecated:n { SetFistrum #1 List #2 #3 }
             \@@_element_set:nnn
               { \exp_args:Ne \str_lowercase:n { #1_\l_@@_tmpa_str } }
               {##1} {##2}
@@ -1151,7 +1034,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SetFistrumDefault}
-%   Command to change the default range used by \cs{lipsum} and friends.
+%   Command to change the default range used by \cs{fistrum} and friends.
 %   \begin{arguments}
 %     \item[\meta{range}] Range to be used as default.
 %   \end{arguments}
@@ -1172,18 +1055,18 @@
 % \begin{macro}{\fistrum}
 %   \begin{arguments}
 %     \item Range-like string that specifies the number of the
-%       paragraphs taken from \lips\ If omitted, the value set by
-%       \cs{SetLipsumDefault} is used, which defaults to |1-7|.
+%       paragraphs taken from \fist\ If omitted, the value set by
+%       \cs{SetFistrumDefault} is used, which defaults to |1-7|.
 %     \item Sentences to be typeset from the range selected by
 %       \meta{paragraph range}. If sentences outside the number of
 %       sentences in \meta{paragraph range} are specified, only existing
 %       sentences are typeset.
 %   \end{arguments}
-%   The difference between \cs{lipsum} and \cs{lipsum*} is the token(s)
+%   The difference between \cs{fistrum} and \cs{fistrum*} is the token(s)
 %   that are inserted after each paragraph (only if called without the
 %   second optional argument).
 %
-%   \cs{lipsum} and \cs{unpacklipsum} have the same interface and do
+%   \cs{fistrum} and \cs{unpackfistrum} have the same interface and do
 %   almost the same thing, so both are implemented using a common macro
 %   \cs{@@_do:nnnn} that does the heavy-lifting, and at the end
 %   executes the code in |#4|.
@@ -1201,11 +1084,11 @@
 % \end{macro}
 %
 % \begin{macro}{\unpackfistrum,\fistrumexp}
-%   This command does the same as \cs{lipsum}, but instead of
+%   This command does the same as \cs{fistrum}, but instead of
 %   typesetting the paragraphs or sentences, it stores the expanded
-%   content in the \cs{lipsumexp} token list. The tokens between items
+%   content in the \cs{fistrumexp} token list. The tokens between items
 %   of the list, set, for example, by using the package option
-%   \opt{space} or by using the \cs{SetLipsum...List} commands, are
+%   \opt{space} or by using the \cs{SetFistrum...List} commands, are
 %   |x|-expanded.
 %    \begin{macrocode}
 \NewDocumentCommand \unpackfistrum { s O { \g_fistrum_default_range_tl } o }
@@ -1216,7 +1099,7 @@
 %
 % \begin{macro}{\@@_do:nnnn}
 % \begin{macro}{\@@_do:N}
-%   This is the main macro for \cs{lipsum} and \cs{unpacklipsum}.
+%   This is the main macro for \cs{fistrum} and \cs{unpackfistrum}.
 %   It parses the paragraph range, sets the sentence/paragraph
 %   separators, then acts accordingly if a sentence range was provided.
 %    \begin{macrocode}
@@ -1375,7 +1258,7 @@
 %
 % \begin{macro}{\NewFistrumPar}
 %   Developer-Level macro to add a paragraph to the dummy text used by
-%   \cs{lipsum} and related commands. To specify a new dummy text, see
+%   \cs{fistrum} and related commands. To specify a new dummy text, see
 %   section~\ref{sec:other-texts}.
 %    \begin{macrocode}
 \cs_new_protected:Npn \NewFistrumPar #1
@@ -1388,11 +1271,11 @@
 % \end{macro}
 %
 % \begin{macro}{\SetFistrumText}
-%   Used to select and load the text output by \cs{lipsum} and friends.
-%   See the section on loading and defining new outputs for \cs{lipsum}
+%   Used to select and load the text output by \cs{fistrum} and friends.
+%   See the section on loading and defining new outputs for \cs{fistrum}
 %   (section~\ref{sec:other-texts}). It first checks whether the
 %   requested text is already loaded, and if not, it loads the
-%   corresponding lipsum text definition file, and clears remaining
+%   corresponding fistrum text definition file, and clears remaining
 %   paragraphs from the previous text, in case their lengths differ.
 %    \begin{macrocode}
 \NewDocumentCommand \SetFistrumText { m }
@@ -1401,7 +1284,7 @@
       {
         \tl_gset:Nn \g_@@_language_tl { english }
         \int_gzero:N \g_@@_par_int
-        \file_input:n { #1.ltd }
+        \file_input:n { #1.ftd }
         \str_gset:Nn \g_@@_text_str {#1}
       }
   }
@@ -1410,7 +1293,7 @@
 %
 % \begin{macro}{\SetFistrumLanguage}
 %   This macro sets the language for hyphenation patterns of the dummy
-%   text.  When a new lipsum text is read, this is reset.
+%   text.  When a new fistrum text is read, this is reset.
 %    \begin{macrocode}
 \NewDocumentCommand \SetFistrumLanguage { m }
   { \tl_gset:Nn \g_@@_language_tl {#1} }
@@ -1443,17 +1326,17 @@
 \cs_new_eq:NN \@@_restore_par_list: ?
 \cs_new_protected:Npn \fistrumRestoreParList
   {
-    \@@_deprecated:n { LipsumRestoreParList }
+    \@@_deprecated:n { FistrumRestoreParList }
     \@@_restore_par_list:
   }
 \cs_new_protected:Npn \fistrumRestoreSentenceList
   {
-    \@@_deprecated:n { LipsumRestoreSentenceList }
+    \@@_deprecated:n { FistrumRestoreSentenceList }
     \@@_restore_sentence_list:
   }
 \cs_new_protected:Npn \fistrumRestoreAll
   {
-    \@@_deprecated:n { LipsumRestoreAll }
+    \@@_deprecated:n { FistrumRestoreAll }
     \@@_restore_par_list: \@@_restore_sentence_list:
   }
 %    \end{macrocode}
@@ -1462,7 +1345,7 @@
 % \end{macro}
 %
 % \begin{macro}{\setfistrum}
-%   Here are the options available at load-time and to \cs{setlipsum}.
+%   Here are the options available at load-time and to \cs{setfistrum}.
 %    \begin{macrocode}
 \NewDocumentCommand \setfistrum { +m }
   { \keys_set:nn { fistrum } {#1} }
@@ -1472,7 +1355,7 @@
 %   \opt{nopar} is implemented as a choice key instead of a boolean so
 %   we can update the separators using \cs{@@_delim_restore:nnn}.
 %   It's initially false, and the default is |true| so that
-%   |\usepackage[nopar]{lipsum}| works as it always did.
+%   |\usepackage[nopar]{fistrum}| works as it always did.
 %    \begin{macrocode}
     nopar .choice: ,
     nopar / true .code:n =
@@ -1495,9 +1378,9 @@
     auto-lang .initial:n = true ,
     auto-lang .default:n = true ,
 %    \end{macrocode}
-%   \opt{text} just does \cs{SetLipsumText}.  The |initial| value is not
+%   \opt{text} just does \cs{SetFistrumText}.  The |initial| value is not
 %   set here because this chunk of code is executed in \pkg{expl3}
-%   syntax, then thetextloadswithoutspaces, so |\setfistrum{text=lipsum}|
+%   syntax, then thetextloadswithoutspaces, so |\setfistrum{text=fistrum-la}|
 %   is used later.
 %    \begin{macrocode}
     text .code:n = \SetFistrumText{#1} ,
@@ -1508,10 +1391,10 @@
     language .tl_gset:N = \g_@@_language_tl ,
     language .value_required:n = true ,
 %    \end{macrocode}
-%   \opt{default-range} does \cs{SetLipsumDefault}, initially |1-7|, as
+%   \opt{default-range} does \cs{SetFistrumDefault}, initially |1-7|, as
 %   documented.  It's default is also |1-7| so that the key has two
-%   meanings: \cs{setlipsum}|{default-range=|\meta{range}|}| sets the
-%   range to the given value, while \cs{setlipsum}|{default-range}| sets
+%   meanings: \cs{setfistrum}|{default-range=|\meta{range}|}| sets the
+%   range to the given value, while \cs{setfistrum}|{default-range}| sets
 %   the range to the ``default default range''.  Pretty neat :)
 %    \begin{macrocode}
     default-range .code:n = \SetFistrumDefault{#1} ,
@@ -1541,14 +1424,14 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% Now turn \cs{ExplSyntaxOff} for a while, and load the default \lips{}
+% Now turn \cs{ExplSyntaxOff} for a while, and load the default \fist{}
 % text, then process the package options, and finally turn
 % \cs{ExplSyntaxOn} again.  Finally, call \cs{@@_restore_par_list:} and
 % \cs{@@_restore_sentence_list:} to set the defaults
 % (\cs{@@_restore_par_list:} may have been redefined by \opt{nopar}).
 %    \begin{macrocode}
 \ExplSyntaxOff
-\setfistrum{text=fistrum}
+\setfistrum{text=fistrum-la}
 \ProcessKeysOptions{fistrum}
 \ExplSyntaxOn
 \@@_restore_par_list:

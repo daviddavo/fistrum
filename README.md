@@ -39,5 +39,5 @@ The `fistrum-es.txt` and `fistrum-la.txt` files were generated using the followi
 
 ## Things to do before publishing
 - [x] Autogenerate fistrum-es.txt and fistrum-la.txt
-- [ ] Revise documentation
+- [x] Revise documentation
 - [ ] Fix tests

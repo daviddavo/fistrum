@@ -1,7 +1,7 @@
 %%
-%% Copyright (C) 2014-2019 by Patrick Happel
-%% Copyright (C) 2021 by Phelype Oleinik
-%% Copyright (C) 2023 by David Davó
+%% Copyright (C) 2014-2019 by Patrick Happel (lipsum)
+%% Copyright (C) 2021 by Phelype Oleinik (lipsum)
+%% Copyright (C) 2023 by David Davó (fistrum)
 %%
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either
@@ -39,8 +39,8 @@ Please send error reports and suggestions for improvements to
 
 \generate{\file{fistrum.sty}{\from{fistrum.dtx}{package}}}
 
-\newread\lipsread
-\newread\lipswrite
+\newread\fistread
+\newread\fistwrite
 \newcount\parno
 \newif\ifinpar
 \def\empty{}%
@@ -49,13 +49,13 @@ Please send error reports and suggestions for improvements to
 \edef\rb{\string}}%
 \begingroup\lccode`\?=`\%
 \lowercase{\endgroup\def\pc{?}}%
-\def\wline{\immediate\write\lipswrite}%
+\def\wline{\immediate\write\fistwrite}%
 \def\genfistrum#1#2#3{%
   \begingroup
     \def\inFileName{fistrum-#1.txt}%
-    \def\outFileName{#2.ltd.tex}%
-    \openin\lipsread\inFileName\space
-    \immediate\openout\lipswrite\outFileName\space
+    \def\outFileName{#2.ftd.tex}%
+    \openin\fistread\inFileName\space
+    \immediate\openout\fistwrite\outFileName\space
     \inparfalse
     \parno=0
     \endlinechar=-1
@@ -65,15 +65,15 @@ Please send error reports and suggestions for improvements to
       \MetaPrefix\~The original source files were:^^J%
       \MetaPrefix ^^J%
       \MetaPrefix\~\inFileName^^J}%
-    \immediate\write\lipswrite{\defaultpreamble}%
-    \immediate\write\lipswrite{\string\SetFistrumLanguage{#3}}%
+    \immediate\write\fistwrite{\defaultpreamble}%
+    \immediate\write\fistwrite{\string\SetFistrumLanguage{#3}}%
     \genfistrumaux\genfistrumaux
-    \closein\lipsread
-    \immediate\closeout\lipswrite
+    \closein\fistread
+    \immediate\closeout\fistwrite
   \endgroup}
 \def\genfistrumaux#1\genfistrumaux{%
-  \ifeof\lipsread\let\line\empty
-  \else \read\lipsread to \line \fi
+  \ifeof\fistread\let\line\empty
+  \else \read\fistread to \line \fi
   \toks0{#1}%
   \ifx\line\empty
     \ifinpar
@@ -89,7 +89,7 @@ Please send error reports and suggestions for improvements to
       \wline{\string\NewFistrumPar\lb\pc\~{\the\parno}}%
     \fi
   \fi
-  \ifeof\lipsread\expandafter\genfistrumend\fi
+  \ifeof\fistread\expandafter\genfistrumend\fi
   \expandafter\genfistrumaux\line\genfistrumaux}
 \def\genfistrumend#1\genfistrumaux#2\genfistrumaux{}
 
@@ -103,13 +103,12 @@ Please send error reports and suggestions for improvements to
 \Msg{* following files into a directory searched        *}
 \Msg{* by TeX:                                          *}
 \Msg{*                                                  *}
-\Msg{* fistrum.sty                                       *}
-\Msg{* fistrum.ltd.tex                                   *}
-\Msg{* fistrum-cs.ltd.tex                                *}
-\Msg{* cicero.ltd.tex                                   *}
+\Msg{* fistrum.sty                                      *}
+\Msg{* fistrum-es.ftd.tex                               *}
+\Msg{* fistrum-la.ftd.tex                               *}
 \Msg{*                                                  *}
 \Msg{* To produce the documentation run the file        *}
-\Msg{* fistrum.dtx through XeLaTeX or LuaLaTeX.          *}
+\Msg{* fistrum.dtx through XeLaTeX or LuaLaTeX.         *}
 \Msg{*                                                  *}
 \Msg{* Happy TeXing!                                    *}
 \Msg{*                                                  *}

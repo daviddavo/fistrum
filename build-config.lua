@@ -8,7 +8,7 @@ stdengine     = checkengines[1] or checkengines[2]
 
 textfiles     = { "*.txt", "CHANGELOG.md" }
 
-installfiles  = { "*.sty", "*.ltd.tex" }
+installfiles  = { "*.sty", "*.ftd.tex" }
 
 sourcefiles   = { "*.dtx", "*.ins", "*.txt" }
 
