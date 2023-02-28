@@ -30,6 +30,9 @@ function update_tag(file, content, tagname, tagdate)
     "\\def\\fistrumdate{%d+-%d+-%d+}",
     "\\def\\fistrumdate{" .. tagdate .. "}")
   tagstring(
+    "\\date{\\DTMdate{%d+-%d+-%d+}}",
+    "\\date{\\DTMdate{"..tagdate.."}}")
+  tagstring(
     "## %[Unreleased%]",
     "## [" .. tagname .. "]")
   return content

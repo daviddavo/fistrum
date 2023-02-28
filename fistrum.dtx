@@ -16,7 +16,7 @@
 %    https://github.com/daviddavo/fistrum
 %
 \def\fistrumversion{0.1}
-\def\fistrumdate{2023-02-23}
+\def\fistrumdate{2023-02-28}
 %<*driver>
 \ProvidesFile{fistrum.dtx}%
   [\fistrumdate\space v\fistrumversion\space
@@ -46,6 +46,7 @@
 \usepackage{fistrum,multicol}
 \usepackage{multirow}
 \usepackage[latin, spanish, es-noshorthands]{babel}
+\usepackage[useregional]{datetime2}
 \makeatletter
 \newcommand\@subtitle{}
 \newcommand\subtitle[1]{%
@@ -108,7 +109,7 @@
 % Isabel Nieto, Carlos A. Hernández y Gauss Multimedia}.
 % }
 % \author{David Davó\thanks{david@ddavo.me}}
-% \date{\today}
+% \date{\DTMdate{2023-02-28}}
 % \RecordChanges
 % \changes{v0.1}{Feb 2023}{First release}
 % \maketitle{\pkg{fistrum} es un paquete de \LaTeX{} derivado de \pkg{lipsum} que produce texto de ejemplo

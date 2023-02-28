@@ -6,7 +6,7 @@ testfiledir   = "testfiles-" .. ...
 
 stdengine     = checkengines[1] or checkengines[2]
 
-textfiles     = { "*.txt", "CHANGELOG.md" }
+textfiles     = { "*.txt", "CHANGELOG.md", "README.md" }
 
 installfiles  = { "*.sty", "*.ftd.tex" }
 
