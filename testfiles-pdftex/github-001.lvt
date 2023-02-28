@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{wrapfig}
 \usepackage[base]{babel}
-\usepackage{lipsum}
+\usepackage{fistrum}
 \textwidth=5cm
 \input{regression-test}
 \begin{document}
@@ -12,6 +12,6 @@
 \begin{wrapfigure}{o}{2cm}
 XXX\\XXX\\XXX
 \end{wrapfigure}
-\lipsum[43]
+\fistrum[43]
 
 \END

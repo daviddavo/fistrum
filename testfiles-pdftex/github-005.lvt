@@ -10,16 +10,16 @@
 \def\testrange#1#2{%
   \TEST {#1}
     {%
-      \unpacklipsum#1\let\savedlips\lipsumexp
-      \unpacklipsum#2%
-      \ifx\savedlips\lipsumexp\else
+      \unpackfistrum#1\let\savedlips\fistrumexp
+      \unpackfistrum#2%
+      \ifx\savedlips\fistrumexp\else
         \show\savedlips
-        \show\lipsumexp
+        \show\fistrumexp
       \fi
     }%
 }
 
-\usepackage{lipsum}
+\usepackage{fistrum}
 
 \begin{document}
 
@@ -34,13 +34,13 @@
 \testrange{[ -2-]}{[2-1]}
 \testrange{[ -2 ]}{[1-2]}
 
-% \setlipsum{par-after=<after>}
+% \setfistrum{par-after=<after>}
 % Ensure 2-1 is empty (because par-after is empty)
 \TEST {[2-1]}
   {%
-    \unpacklipsum[2-1]
-    \ifx\lipsumexp\empty\else
-      \show\lipsumexp
+    \unpackfistrum[2-1]
+    \ifx\fistrumexp\empty\else
+      \show\fistrumexp
     \fi
   }
 \testrange{[1-2][1-2]}{[1-2][1-2]}

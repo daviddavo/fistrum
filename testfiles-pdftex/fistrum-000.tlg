@@ -1,0 +1,11 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(fistrum.sty
+(../l3keys2e.sty
+Package: l3keys2e ....-..-.. LaTeX2e option processing using LaTeX3 keys
+)
+Package: fistrum ....-..-.. v... 150 paragraphs of Lorem Fistrum dummy text
+\g__fistrum_par_int=\count...
+\l__fistrum_a_int=\count...
+\l__fistrum_b_int=\count...
+(fistrum-es.ftd.tex))

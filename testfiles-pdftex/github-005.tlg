@@ -23,7 +23,7 @@ TEST 5: [1-2 ]
 ============================================================
 TEST 6: [1-2-]
 ============================================================
-! Package lipsum Error: Invalid number or range '1-2-'.
+! Package fistrum Error: Invalid number or range '1-2-'.
 Type <return> to continue.
  ...                                              
 l. ...\testrange{[1-2-]}{[2-1]}
@@ -34,7 +34,7 @@ If that doesn't work, type X <return> to quit.
 ============================================================
 TEST 7: [ -2-]
 ============================================================
-! Package lipsum Error: Invalid number or range ' -2-'.
+! Package fistrum Error: Invalid number or range ' -2-'.
 Type <return> to continue.
  ...                                              
 l. ...\testrange{[ -2-]}{[2-1]}
@@ -89,7 +89,7 @@ TEST 18: [][1-2 ]
 ============================================================
 TEST 19: [][1-2-]
 ============================================================
-! Package lipsum Error: Invalid number or range '1-2-'.
+! Package fistrum Error: Invalid number or range '1-2-'.
 Type <return> to continue.
  ...                                              
 l. ...\testrange{[][1-2-]}{[1-7][2-1]}
@@ -100,7 +100,7 @@ If that doesn't work, type X <return> to quit.
 ============================================================
 TEST 20: [][ -2-]
 ============================================================
-! Package lipsum Error: Invalid number or range ' -2-'.
+! Package fistrum Error: Invalid number or range ' -2-'.
 Type <return> to continue.
  ...                                              
 l. ...\testrange{[][ -2-]}{[1-7][2-1]}
