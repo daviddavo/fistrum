@@ -34,7 +34,7 @@ function update_tag(file, content, tagname, tagdate)
     "\\date{\\DTMdate{"..tagdate.."}}")
   tagstring(
     "## %[Unreleased%]",
-    "## [" .. tagname .. "]")
+    "## [" .. tagname .. "] - " ..tagdate)
   return content
 end
 
